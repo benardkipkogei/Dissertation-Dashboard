@@ -180,22 +180,16 @@ mydata["Modern Contraceptive Use"] = (
 
 
 # 1. Uptake rate by age group
-age_summary = (
-    mydata
-    .groupby("age_group", observed=True)
+age_summary = (mydata.groupby("age_group", observed=True)
     .agg(
         users=("Modern Contraceptive Use", "sum"),
-        total=("Modern Contraceptive Use", "count"),
-    )
+        total=("Modern Contraceptive Use", "count"),)
     .reset_index()
 )
 
-age_summary["rate"] = (
-    age_summary["users"] / age_summary["total"]
-) * 100
+age_summary["rate"] = (age_summary["users"] / age_summary["total"]) * 100
 
-fig_age = px.line(
-    age_summary,
+fig_age = px.line(age_summary,
     x="age_group",
     y="rate",
     markers=True,
