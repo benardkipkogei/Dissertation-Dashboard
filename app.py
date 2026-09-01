@@ -147,7 +147,7 @@ mydata = filter_data(
 )
 
 
-# KPIs
+#Key performance indicators  (KPIs)
 total = len(mydata)
 modern = (
     mydata["modern_contraceptive_use"] == "Modern method"
