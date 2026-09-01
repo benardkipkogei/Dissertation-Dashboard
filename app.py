@@ -18,6 +18,7 @@ COLORS = [
 st.set_page_config(
     page_title="KENYA MODERN CONTRACEPTIVE UPTAKE DASHBORAD",
     layout="wide",
+
 )
 
 
