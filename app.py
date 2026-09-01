@@ -7,6 +7,14 @@ import streamlit as st
 
 DATA_FILE = "KEIR8CFL_data.csv"
 
+COLORS = [
+    "#1f77b4",  # blue
+    "#2ca02c",  # green
+    "#ff7f0e",  # orange
+    "#9467bd",  # purple
+    "#e377c2",  # pink
+    "#17becf"   # turquoise
+]
 st.set_page_config(
     page_title="KENYA MODERN CONTRACEPTIVE UPTAKE DASHBORAD",
     layout="wide",
@@ -88,7 +96,7 @@ def required_columns_present(df: pd.DataFrame) -> bool:
     return True
 
 
-st.title("KENYA MODERN CONTRACEPTIVE UPTAKE DASHBOARD")
+st.title("Kenya Modern Contraceptive Uptake Dashboard")
 
 try:
     data = load_data(DATA_FILE)
@@ -194,6 +202,7 @@ fig_age = px.line(age_summary,
     y="rate",
     markers=True,
     title="Uptake Rate by Age Group",
+    color_discrete_sequence=["#1f77b4"]
 )
 
 
