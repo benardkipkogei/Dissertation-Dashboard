@@ -88,7 +88,7 @@ def required_columns_present(df: pd.DataFrame) -> bool:
     return True
 
 
-st.title("Kenya Modern Contraceptive Dashboard")
+st.title("KENYA MODERN CONTRACEPTIVE UPTAKE DASHBOARD")
 
 try:
     data = load_data(DATA_FILE)
