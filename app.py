@@ -1,41 +1,43 @@
+#Importing libraries  to run the environment pandas, plotply and sreamlit
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
 
+
 DATA_FILE = "KEIR8CFL_data.csv"
 
 st.set_page_config(
-    page_title="Kenya Modern Contraceptive Dashboard",
+    page_title="KENYA MODERN CONTRACEPTIVE UPTAKE DASHBORAD",
     layout="wide",
 )
 
 
 @st.cache_data
 def load_data(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path)
+    KEIR8CFL_data1 = pd.read_csv(path)
 
     # Preserve the notebook's column-cleaning logic.
-    df.columns = (
-        df.columns
+    KEIR8CFL_data1.columns = (
+        KEIR8CFL_data1.columns
         .str.strip()
         .str.lower()
         .str.replace(" ", "_", regex=False)
         .str.replace(r"[^\w]", "", regex=True)
     )
 
-    # Preserve the notebook's age bands.
+    #creating the age groups for the for the age variable to assess the modern contraceptive uptake 
     bins = [15, 20, 25, 30, 35, 40, 45, 50]
     labels = ["15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49"]
 
-    df["age_group"] = pd.cut(
-        df["age"],
+    KEIR8CFL_data1["age_group"] = pd.cut(
+        KEIR8CFL_data1["age"],
         bins=bins,
         labels=labels,
         right=False,
     )
 
-    return df
+    return KEIR8CFL_data1
 
 
 def filter_data(
@@ -104,7 +106,7 @@ if not required_columns_present(data):
     st.stop()
 
 
-# Filters
+#Creating filters to the dashboard to enable interactive aspect
 filter_col1, filter_col2, filter_col3, filter_col4 = st.columns(4)
 
 with filter_col1:
