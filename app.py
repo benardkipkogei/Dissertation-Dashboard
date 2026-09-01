@@ -237,6 +237,8 @@ fig_mar = px.bar(
     x="marital_status",
     y="Modern Contraceptive Use",
     title="Modern contraceptive Uptake by Marital Status",
+    color="Modern Contraceptive Use",
+    color_continuous_scale="Blues"
 )
 
 
