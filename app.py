@@ -219,6 +219,8 @@ fig_edu = px.bar(
     x="education_level",
     y="Modern Contraceptive Use",
     title="Uptake rate by Education Level",
+    color="Modern Contraceptive Use",
+    color_continuous_scale="Viridis"
 )
 
 
