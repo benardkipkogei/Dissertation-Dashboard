@@ -256,7 +256,7 @@ fig_wealth = px.bar(
     y="Modern Contraceptive Use",
     title="Uptake by Wealth Index",
     color="Modern Contraceptive Use",
-    color_continuous_scale="Greens"
+    color_continuous_scale="Viridis"
 )
 
 
